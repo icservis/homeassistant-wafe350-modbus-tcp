@@ -1,0 +1,73 @@
+	Funkce	Typ	Povel Read	Powel Write	Adsress	Sample	Scale	Offset	Result	Unit	Funkce
+Read Coils											
+	Sleep mode	RW Status	Read Coils	Write Single Coil	0	FALSE			FALSE	Bool	1 - Zapne 0 - vypne
+	Boost short	RW Status	Read Coils	Write Single Coil	1	FALSE			FALSE	Bool	1 - Zapne 0 - vypne Boost, čtení 1 Boost short dle konfikurace
+	Boost long	RW Status	Read Coils	Write Single Coil	2	FALSE			FALSE	Bool	1 - Zapne 0 - vypne Boost, čtení 1 Boost long dle konfikurace
+	Holiday mode	RW Status	Read Coils	Write Single Coil	3	FALSE			FALSE	Bool	1 - Zapne 0 - vypne
+	Circulation	RW Status	Read Coils	Write Single Coil	4	FALSE			FALSE	Bool	1 - Zapne 0 - vypne
+	Fireplace option	RW Status	Read Coils	Write Single Coil	5	FALSE			FALSE	Bool	1 - Zapne 0 - vypne
+	Silent option	RW Status	Read Coils	Write Single Coil	6	FALSE			FALSE	Bool	1 - Zapne 0 - vypne
+	Inteligent mode	RW Status	Read Coils	Write Single Coil	7	TRUE			TRUE	Bool	1 - Zapnuto 0 - vypnuto, zápis 1 zapne
+	Scheduler mode	RW Status	Read Coils	Write Single Coil	8	FALSE			FALSE	Bool	1 - Zapnuto 0 - vypnuto, zápis 1 zapne
+	Manual mode	RW Status	Read Coils	Write Single Coil	9	FALSE			FALSE	Bool	1 - Zapnuto 0 - vypnuto, zápis 1 zapne
+	Dehum mode	RW Status	Read Coils	Write Single Coil	10	FALSE			FALSE	Bool	1 - Jednotka v módu odvlhčování, 0 - jednotka v entalpickém
+	Safe dehum	RW Status	Read Coils	Write Single Coil	11	FALSE			FALSE	Bool	V módu odvlhčování při teplotě pod 0°C 1 - zapnut jen odtah. 0 - jednotka přechází do entalpického módu
+	PID drive	RW Status	Read Coils	Write Single Coil	12	FALSE			FALSE	Bool	V módu odvlhčování a inteligentním módu se řídí : 1 - dle vnitřní vlhkosti 0 - dle CO2
+	Bypass regime	RW Status	Read Coils	Write Single Coil	13	TRUE			TRUE	Bool	V bypass modu je jednotka 1 - v inteligentním režimu, 0 - běží na bypass flow
+	Bypass remove	RW Status	Read Coils	Write Single Coil	14	FALSE			FALSE	Bool	V podmínkách pro bypass 1 - nebude 0 - bude spuštěn
+	Week noAct regime	RW Status	Read Coils	Write Single Coil	15	FALSE			FALSE	Bool	V týdenním módu v neaktívním stavu jednotka 1 - zastavena, 0 - běží na minimal
+	Week active regime	RW Status	Read Coils	Write Single Coil	16	FALSE			FALSE	Bool	V týdenním módu v aktívním stavu jednotka 1 - v inteligent. módu, 0 - běží na nomina
+	Bypass mode	R status	Read Coils		17	FALSE			FALSE	Bool	1 - Bypass aktivní 0 - Bypass není zapnut
+	Week mode active	R status	Read Coils		18	FALSE			FALSE	Bool	Je-li jednotka v scheduleru: 1 - Aktivní, 0 - Neaktívní
+	Sensor temperature outside in	R status	Read Coils		19	FALSE			FALSE	Bool	1 - Error, 0 - OK
+	Sensor temperature inside in	R status	Read Coils		20	FALSE			FALSE	Bool	1 - Error, 0 - OK
+	Sensor temperarure inside out	R status	Read Coils		21	FALSE			FALSE	Bool	1 - Error, 0 - OK
+	Sensor temperature outside out	R status	Read Coils		22	FALSE			FALSE	Bool	1 - Error, 0 - OK
+	Sensor humidity outside in	R status	Read Coils		23	FALSE			FALSE	Bool	1 - Error, 0 - OK
+	Sensor humidity inside in	R status	Read Coils		24	FALSE			FALSE	Bool	1 - Error, 0 - OK
+	Sensor humidity inside out	R status	Read Coils		25	FALSE			FALSE	Bool	1 - Error, 0 - OK
+	Sensor humidity outside out	R status	Read Coils		26	FALSE			FALSE	Bool	1 - Error, 0 - OK
+	Sensor fresh filter pressure	R status	Read Coils		27	FALSE			FALSE	Bool	1 - Error, 0 - OK
+	Sensor exhaust filter pressure	R status	Read Coils		28	FALSE			FALSE	Bool	1 - Error, 0 - OK
+	Sensor CO2	R status	Read Coils		29	FALSE			FALSE	Bool	1 - Error, 0 - OK
+	Flaps status	R status	Read Coils		30	FALSE			FALSE	Bool	1 - Error, 0 - OK
+	Filter fresh warning	RW Status	Read Coils	Write Single Coil	31	FALSE			FALSE	Bool	1 - reset filtru čtení: 1 - Filter near to clogged, 0 - good
+	Filter exhaust warning	RW Status	Read Coils	Write Single Coil	32	FALSE			FALSE	Bool	1 - reset filtru čtení: 1 - Filter near to clogged, 0 - good
+	Filter fresh clogged	RW Status	Read Coils	Write Single Coil	33	FALSE			FALSE	Bool	1 - reset filtru čtení: 1 - Filter clogged, 0 - not good
+	Filter exhaust clogged	RW Status	Read Coils	Write Single Coil	34	FALSE			FALSE	Bool	1 - reset filtru čtení: 1 - Filter clogged, 0 - not good
+	Low temperature of fresh air - frost	R status	Read Coils		35	FALSE			FALSE	Bool	1 - Velmi nízká teplota na vstupu z důvodu poruchy předehřevu nebo silného mrazu
+	Machine stopped on error	R status	Read Coils		36	FALSE			FALSE	Bool	1 - Jednotka zastavena z důvodu poruchy zabraňující bezpečnému provozu - servis
+	Tech mode	R status	Read Coils		37	FALSE			FALSE	Bool	1 - Jednotka je v technickém módu (změna módu nebo porucha) 0 - jednotka je v provozním módu
+Read Input Reg											
+	Temperature outside in	R status	Read Input Reg		0	51	0,1	0	5,1	°C	Venkovní teplota
+	Temperature inside in	R status	Read Input Reg		1	235	0,1	0	23,5	°C	Teplota nasávání
+	Temperature inside out	R status	Read Input Reg		2	238	0,1	0	23,8	°C	Vnitřní teplota
+	Temperature outside out	R status	Read Input Reg		3	97	0,1	0	9,7	°C	Teplota odpadu
+	Humidity outside in	R status	Read Input Reg		4	886	0,1	0	88,6	%	
+	Humidity inside in	R status	Read Input Reg		5	531	0,1	0	53,1	%	
+	Humidity inside out	R status	Read Input Reg		6	624	0,1	0	62,4	%	
+	Humidity outside out	R status	Read Input Reg		7	839	0,1	0	83,9	%	
+	CO2 value	R status	Read Input Reg		8	674	1	0	674	PPM	
+	Fresh air fan percentage	R status	Read Input Reg		9	45	1	0	45	%	
+	Fresh air fan flow	R status	Read Input Reg		10	142	1	0	142	m3/h	
+	Freshair fan rpm	R status	Read Input Reg		11	1560	1	0	1560	RPM	
+	Exhaustair fan percentage	R status	Read Input Reg		12	28	1	0	28	%	
+	Exhaust air fan flow	R status	Read Input Reg		13	142	1	0	142	m3/h	
+	Exhaust fan rpm	R status	Read Input Reg		14	1428	1	0	1428	RPM	
+	Nominal Flow	RW Status	Read Input Reg	Write Single Reg	15	230	1	0	230	m3/h	
+	Minimal Flow	RW Status	Read Input Reg	Write Single Reg	16	85	1	0	85	m3/h	
+	Maximal Flow	RW Status	Read Input Reg	Write Single Reg	17	285	1	0	285	m3/h	
+	Manual Flow	RW Status	Read Input Reg	Write Single Reg	18	240	1	0	240	m3/h	
+	Sillent Flow Max	RW Status	Read Input Reg	Write Single Reg	19	150	1	0	150	m3/h	
+	Bypass Flow	RW Status	Read Input Reg	Write Single Reg	20	150	1	0	150	m3/h	
+	Bypass Month Start	RW Status	Read Input Reg	Write Single Reg	21	5	1	0	5	-	
+	Bypass Month End	RW Status	Read Input Reg	Write Single Reg	22	10	1	0	10	-	
+	Bypass Out Temp Min	RW Status	Read Input Reg	Write Single Reg	23	12	1	0	12	°C	
+	Bypass Inside Temp Min	RW Status	Read Input Reg	Write Single Reg	24	24	1	0	24	°C	
+	Boost short duration	RW Status	Read Input Reg	Write Single Reg	25	15	1	0	15	min	
+	Boost long duration	RW Status	Read Input Reg	Write Single Reg	26	60	1	0	60	min	
+	Circulation duration	RW Status	Read Input Reg	Write Single Reg	27	20	1	0	20	min	
+	CO2 setpoint	RW Status	Read Input Reg	Write Single Reg	28	500	1	0	500	PPM	
+	RH inside out setpoint	RW Status	Read Input Reg	Write Single Reg	29	35	1	0	35	%	
+	Fresh filter status	R status	Read Input Reg		30	98	1	0	98	%	
+	Exhaust filter status	R status	Read Input Reg		31	98	1	0	98	%	
