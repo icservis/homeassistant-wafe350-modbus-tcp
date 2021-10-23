@@ -1,0 +1,233 @@
+modbus:
+  - name: Wafe
+    type: tcp
+    host: 10.0.0.76
+    port: 502
+    binary_sensors:
+      - name: "wafe_boost_short_flag"
+        address: 1
+        slave: 1
+        input_type: coil
+      - name: "wafe_boost_long_flag"
+        address: 2
+        slave: 1
+        input_type: coil
+      - name: "wafe_hollyday_flag"
+        address: 3
+        slave: 1
+        input_type: coil
+      - name: "wafe_circulation_flag"
+        address: 4
+        slave: 1
+        input_type: coil
+      - name: "wafe_fireplace_flag"
+        address: 5
+        slave: 1
+        input_type: coil
+      - name: "wafe_silent_flag"
+        address: 6
+        slave: 1
+        input_type: coil
+      - name: "wafe_intelligent_mode"
+        address: 7
+        scan_interval: 1
+        slave: 1
+        input_type: coil
+      - name: "wafe_scheduller_mode"
+        address: 8
+        scan_interval: 1
+        slave: 1
+        input_type: coil
+      - name: "wafe_manual_mode"
+        address: 9
+        scan_interval: 1
+        slave: 1
+        input_type: coil
+    sensors:
+      - name: "Outside Air"
+        unit_of_measurement: °C
+        slave: 1
+        address: 0
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 0.1
+        offset: 0
+        precision: 1
+      - name: "Fresh Air"
+        unit_of_measurement: °C
+        slave: 1
+        address: 1
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 0.1
+        offset: 0
+        precision: 1
+      - name: "Indoor Air"
+        unit_of_measurement: °C
+        slave: 1
+        address: 2
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 0.1
+        offset: 0
+        precision: 1
+      - name: "Waste Air"
+        unit_of_measurement: °C
+        slave: 1
+        address: 3
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 0.1
+        offset: 0
+        precision: 1
+      - name: "Humidity Outside In"
+        unit_of_measurement: "%"
+        slave: 1
+        address: 4
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 0.1
+        offset: 0
+        precision: 1
+      - name: "Humidity Inside In"
+        unit_of_measurement: "%"
+        slave: 1
+        address: 5
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 0.1
+        offset: 0
+        precision: 1
+      - name: "Humidity Inside Out"
+        unit_of_measurement: "%"
+        slave: 1
+        address: 6
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 0.1
+        offset: 0
+        precision: 1
+      - name: "Humidity Outside Out"
+        unit_of_measurement: "%"
+        slave: 1
+        address: 7
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 0.1
+        offset: 0
+        precision: 1
+      - name: "CO2 Inside"
+        unit_of_measurement: ppm
+        slave: 1
+        address: 8
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 1
+        offset: 0
+        precision: 0 
+      - name: "Fresh Air Fan Perc"
+        unit_of_measurement: "%"
+        slave: 1
+        address: 9
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 1
+        offset: 0
+        precision: 0  
+      - name: "Fresh Air Fan Flow"
+        unit_of_measurement: "m³/h"
+        slave: 1
+        address: 10
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 1
+        offset: 0
+        precision: 0
+      - name: "Fresh Air Fan RPM"
+        unit_of_measurement: "RPM"
+        slave: 1
+        address: 11
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 1
+        offset: 0
+        precision: 0 
+      - name: "Exhaust Air Fan Perc"
+        unit_of_measurement: "%"
+        slave: 1
+        address: 12
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 1
+        offset: 0
+        precision: 0  
+      - name: "Exhaust Air Fan Flow"
+        unit_of_measurement: "m³/h"
+        slave: 1
+        address: 13
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 1
+        offset: 0
+        precision: 0
+      - name: "Exhaust Air Fan RPM"
+        unit_of_measurement: "RPM"
+        slave: 1
+        address: 14
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 1
+        offset: 0
+        precision: 0 
+      - name: "Fresh Filter Status"
+        unit_of_measurement: "%"
+        slave: 1
+        address: 30
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 1
+        offset: 0
+        precision: 0
+      - name: "Exhaust Filter Status"
+        unit_of_measurement: "%"
+        slave: 1
+        address: 31
+        count: 1
+        input_type: input
+        data_type: custom
+        structure: ">H"
+        scale: 1
+        offset: 0
+        precision: 0

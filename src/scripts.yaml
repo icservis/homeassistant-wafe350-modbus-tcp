@@ -1,0 +1,84 @@
+'wafe_short_boost_toggle':
+  alias: Wafe Short Boost Toggle
+  sequence:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_boost_short_flag
+        state: 'on'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 1
+          state: 'off'
+          hub: Wafe
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_boost_short_flag
+        state: 'off'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 1
+          state: 'on'
+          hub: Wafe
+    default: []
+  mode: single
+'wafe_silet_flag_toggle':
+  alias: Wafe Silent Flag Toggle
+  sequence:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_silent_flag
+        state: 'on'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 6
+          state: 'off'
+          hub: Wafe
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_silent_flag
+        state: 'off'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 6
+          state: 'on'
+          hub: Wafe
+    default: []
+  mode: single
+'wafe_circulation_only_toggle':
+  alias: Wafe Circulation Only Toggle
+  sequence:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_circulation_flag
+        state: 'on'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 4
+          state: 'off'
+          hub: Wafe
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_circulation_flag
+        state: 'off'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 4
+          state: 'on'
+          hub: Wafe
+    default: []
+  mode: single
