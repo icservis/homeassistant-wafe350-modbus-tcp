@@ -1,0 +1,38 @@
+type: entities
+entities:
+  - entity: sensor.indoor_air
+    secondary_info: last-updated
+  - entity: sensor.outside_air
+    secondary_info: last-updated
+  - entity: sensor.fresh_air
+    secondary_info: last-updated
+  - entity: sensor.waste_air
+    secondary_info: last-updated
+  - entity: sensor.humidity_inside_out
+    icon: hass:water-percent
+    secondary_info: last-updated
+  - entity: sensor.humidity_outside_in
+    icon: hass:water-percent
+    secondary_info: last-updated
+  - entity: sensor.co2_inside
+    icon: hass:air-filter
+    secondary_info: last-updated
+  - entity: sensor.fresh_air_fan_flow
+    icon: hass:fan
+    secondary_info: last-updated
+  - entity: sensor.fresh_air_fan_perc
+    icon: hass:fan
+    secondary_info: last-updated
+  - entity: sensor.exhaust_air_fan_flow
+    icon: hass:fan
+    secondary_info: last-updated
+  - entity: sensor.exhaust_air_fan_perc
+    icon: hass:fan
+    secondary_info: last-updated
+  - entity: sensor.fresh_filter_status
+    secondary_info: last-updated
+  - entity: sensor.exhaust_filter_status
+    secondary_info: last-updated
+title: Parametry
+state_color: true
+show_header_toggle: false

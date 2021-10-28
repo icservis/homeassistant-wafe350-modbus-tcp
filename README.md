@@ -27,7 +27,7 @@ modbus:
 
 ![alt text](res/hassio-developer-tools.png)
 
-5. Configure lovelace card as usual, for exaqmple:
+5. Configure lovelace card as usual, for example:
 ```
 type: vertical-stack
 cards:

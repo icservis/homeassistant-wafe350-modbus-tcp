@@ -1,3 +1,31 @@
+'wafe_sleep_toggle':
+  alias: Wafe Sleep Toggle
+  sequence:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_sleep_mode
+        state: 'on'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 0
+          state: 'off'
+          hub: Wafe
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_sleep_mode
+        state: 'off'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 0
+          state: 'on'
+          hub: Wafe
+    default: []
+  mode: single
 'wafe_short_boost_toggle':
   alias: Wafe Short Boost Toggle
   sequence:
@@ -26,30 +54,58 @@
           hub: Wafe
     default: []
   mode: single
-'wafe_silet_flag_toggle':
-  alias: Wafe Silent Flag Toggle
+'wafe_long_boost_toggle':
+  alias: Wafe Long Boost Toggle
   sequence:
   - choose:
     - conditions:
       - condition: state
-        entity_id: binary_sensor.wafe_silent_flag
+        entity_id: binary_sensor.wafe_boost_long_flag
         state: 'on'
       sequence:
       - service: modbus.write_coil
         data:
           unit: 1
-          address: 6
+          address: 2
           state: 'off'
           hub: Wafe
     - conditions:
       - condition: state
-        entity_id: binary_sensor.wafe_silent_flag
+        entity_id: binary_sensor.wafe_boost_long_flag
         state: 'off'
       sequence:
       - service: modbus.write_coil
         data:
           unit: 1
-          address: 6
+          address: 2
+          state: 'on'
+          hub: Wafe
+    default: []
+  mode: single
+'wafe_hollyday_toggle':
+  alias: Wafe Hollyday Toggle
+  sequence:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_hollyday_flag
+        state: 'on'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 3
+          state: 'off'
+          hub: Wafe
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_hollyday_flag
+        state: 'off'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 3
           state: 'on'
           hub: Wafe
     default: []
@@ -82,3 +138,111 @@
           hub: Wafe
     default: []
   mode: single
+'wafe_fireplace_toggle':
+  alias: Wafe Fireplace Toggle
+  sequence:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_fireplace_flag
+        state: 'on'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 5
+          state: 'off'
+          hub: Wafe
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_fireplace_flag
+        state: 'off'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 5
+          state: 'on'
+          hub: Wafe
+    default: []
+  mode: single
+'wafe_silent_flag_toggle':
+  alias: Wafe Silent Flag Toggle
+  sequence:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_silent_flag
+        state: 'on'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 6
+          state: 'off'
+          hub: Wafe
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_silent_flag
+        state: 'off'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 6
+          state: 'on'
+          hub: Wafe
+    default: []
+  mode: single
+'wafe_intelligent_mode_set':
+  alias: Wafe Itelligent Mode Set
+  sequence:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_intelligent_mode
+        state: 'off'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 7
+          state: 'on'
+          hub: Wafe
+    default: []
+  mode: single
+'wafe_scheduller_mode_set':
+  alias: Wafe Scheduller Mode Set
+  sequence:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_scheduller_mode
+        state: 'off'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 8
+          state: 'on'
+          hub: Wafe
+    default: []
+  mode: single
+'wafe_manual_mode_set':
+  alias: Wafe Manual Mode Set
+  sequence:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.wafe_manual_mode
+        state: 'off'
+      sequence:
+      - service: modbus.write_coil
+        data:
+          unit: 1
+          address: 9
+          state: 'on'
+          hub: Wafe
+    default: []
+  mode: single
+  

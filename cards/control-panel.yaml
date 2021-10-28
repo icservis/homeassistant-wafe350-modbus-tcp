@@ -1,0 +1,82 @@
+type: grid
+cards:
+  - type: button
+    tap_action:
+      action: call-service
+      service: script.wafe_sleep_toggle
+      service_data: {}
+      target: {}
+    entity: binary_sensor.wafe_sleep_mode
+    show_state: true
+    name: Sleep
+    icon: mdi:power-sleep
+  - type: horizontal-stack
+    cards:
+      - type: button
+        tap_action:
+          action: call-service
+          service: script.wafe_short_boost_toggle
+          service_data: {}
+          target: {}
+        entity: binary_sensor.wafe_boost_short_flag
+        show_icon: true
+        show_state: true
+        name: Boost
+      - type: button
+        tap_action:
+          action: call-service
+          service: script.wafe_circulation_only_toggle
+          service_data: {}
+          target: {}
+        entity: binary_sensor.wafe_circulation_flag
+        name: Circulation
+        show_state: true
+      - type: button
+        tap_action:
+          action: call-service
+          service: script.wafe_silent_flag_toggle
+          service_data: {}
+          target: {}
+        entity: binary_sensor.wafe_silent_flag
+        name: Silent
+        show_state: true
+      - type: button
+        tap_action:
+          action: call-service
+          service: script.wafe_hollyday_toggle
+          service_data: {}
+          target: {}
+        entity: binary_sensor.wafe_hollyday_flag
+        name: Hollyday
+        show_state: true
+  - type: horizontal-stack
+    cards:
+      - type: button
+        tap_action:
+          action: call-service
+          service: script.wafe_intelligent_mode_set
+          service_data: {}
+          target: {}
+        entity: binary_sensor.wafe_intelligent_mode
+        name: Intelligent
+        show_state: true
+      - type: button
+        tap_action:
+          action: call-service
+          service: script.wafe_manual_mode_set
+          service_data: {}
+          target: {}
+        entity: binary_sensor.wafe_manual_mode
+        show_state: true
+        name: Manual
+      - type: button
+        tap_action:
+          action: call-service
+          service: script.wafe_scheduller_mode_set
+          service_data: {}
+          target: {}
+        entity: binary_sensor.wafe_scheduller_mode
+        name: Scheduller
+        show_state: true
+columns: 1
+square: false

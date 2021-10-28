@@ -1,0 +1,39 @@
+type: vertical-stack
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: entity
+        entity: sensor.indoor_air
+        name: Vnitřní
+      - type: entity
+        entity: sensor.outside_air
+        name: Venkovní
+  - type: horizontal-stack
+    cards:
+      - type: gauge
+        entity: sensor.humidity_inside_out
+        min: 0
+        max: 100
+        name: Vlhkost
+        severity:
+          green: 40
+          yellow: 60
+          red: 80
+      - type: gauge
+        entity: sensor.fresh_air_fan_perc
+        min: 0
+        max: 100
+        name: Ventilace
+        severity:
+          green: 30
+          yellow: 60
+          red: 90
+      - type: gauge
+        entity: sensor.co2_inside
+        min: 0
+        max: 2000
+        severity:
+          green: 500
+          yellow: 1000
+          red: 1500
+        name: CO2

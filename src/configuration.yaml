@@ -4,6 +4,10 @@ modbus:
     host: 10.0.0.76
     port: 502
     binary_sensors:
+      - name: "wafe_sleep_mode"
+        address: 0
+        slave: 1
+        input_type: coil
       - name: "wafe_boost_short_flag"
         address: 1
         slave: 1
