@@ -25,6 +25,10 @@
           state: 'on'
           hub: Wafe
     default: []
+  - service: homeassistant.update_entity
+    target:
+      entity_id:
+        - binary_sensor.wafe_sleep_mode
   mode: single
 'wafe_short_boost_toggle':
   alias: Wafe Short Boost Toggle
@@ -53,6 +57,10 @@
           state: 'on'
           hub: Wafe
     default: []
+  - service: homeassistant.update_entity
+    target:
+      entity_id:
+        - binary_sensor.wafe_boost_short_flag
   mode: single
 'wafe_long_boost_toggle':
   alias: Wafe Long Boost Toggle
@@ -81,6 +89,10 @@
           state: 'on'
           hub: Wafe
     default: []
+  - service: homeassistant.update_entity
+    target:
+      entity_id:
+        - binary_sensor.wafe_boost_long_flag
   mode: single
 'wafe_hollyday_toggle':
   alias: Wafe Hollyday Toggle
@@ -109,6 +121,10 @@
           state: 'on'
           hub: Wafe
     default: []
+  - service: homeassistant.update_entity
+    target:
+      entity_id:
+        - binary_sensor.wafe_hollyday_flag
   mode: single
 'wafe_circulation_only_toggle':
   alias: Wafe Circulation Only Toggle
@@ -137,6 +153,10 @@
           state: 'on'
           hub: Wafe
     default: []
+  - service: homeassistant.update_entity
+    target:
+      entity_id:
+        - binary_sensor.wafe_circulation_flag
   mode: single
 'wafe_fireplace_toggle':
   alias: Wafe Fireplace Toggle
@@ -193,6 +213,10 @@
           state: 'on'
           hub: Wafe
     default: []
+  - service: homeassistant.update_entity
+    target:
+      entity_id:
+        - binary_sensor.wafe_silent_flag
   mode: single
 'wafe_intelligent_mode_set':
   alias: Wafe Itelligent Mode Set
