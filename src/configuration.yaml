@@ -3,50 +3,71 @@ modbus:
     type: tcp
     host: 10.0.0.76
     port: 502
-    binary_sensors:
-      - name: "wafe_sleep_mode"
+    close_comm_on_error : false
+    delay : 2
+    retries: 10
+    retry_on_empty: true
+    switches:
+      - name: "Wafe sleep"
         address: 0
         slave: 1
-        input_type: coil
-      - name: "wafe_boost_short_flag"
+        write_type: coil
+        verify:
+          delay: 5
+      - name: "Wafe short boost"
         address: 1
         slave: 1
-        input_type: coil
-      - name: "wafe_boost_long_flag"
+        write_type: coil
+        verify:
+          delay: 1
+      - name: "Wafe long boost"
         address: 2
         slave: 1
-        input_type: coil
-      - name: "wafe_hollyday_flag"
+        write_type: coil
+        verify:
+          delay: 1
+      - name: "Wafe hollyday"
         address: 3
         slave: 1
-        input_type: coil
-      - name: "wafe_circulation_flag"
+        write_type: coil
+        verify:
+          delay: 1
+      - name: "Wafe circulation"
         address: 4
         slave: 1
-        input_type: coil
-      - name: "wafe_fireplace_flag"
+        write_type: coil
+        verify:
+          delay: 1
+      - name: "Wafe fireplace"
         address: 5
         slave: 1
-        input_type: coil
-      - name: "wafe_silent_flag"
+        write_type: coil
+        verify:
+          delay: 1
+      - name: "Wafe silent"
         address: 6
         slave: 1
-        input_type: coil
-      - name: "wafe_intelligent_mode"
+        write_type: coil
+        verify:
+          delay: 1
+      - name: "Wafe intelligent mode"
         address: 7
-        scan_interval: 1
         slave: 1
-        input_type: coil
-      - name: "wafe_scheduller_mode"
+        write_type: coil
+        verify:
+          delay: 0
+      - name: "Wafe scheduller mode"
         address: 8
-        scan_interval: 1
         slave: 1
-        input_type: coil
-      - name: "wafe_manual_mode"
+        write_type: coil
+        verify:
+          delay: 0
+      - name: "Wafe manual mode"
         address: 9
-        scan_interval: 1
         slave: 1
-        input_type: coil
+        write_type: coil
+        verify:
+          delay: 0
     sensors:
       - name: "Outside Air"
         unit_of_measurement: °C
@@ -54,8 +75,7 @@ modbus:
         address: 0
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 0.1
         offset: 0
         precision: 1
@@ -65,8 +85,7 @@ modbus:
         address: 1
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 0.1
         offset: 0
         precision: 1
@@ -76,8 +95,7 @@ modbus:
         address: 2
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 0.1
         offset: 0
         precision: 1
@@ -87,8 +105,7 @@ modbus:
         address: 3
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 0.1
         offset: 0
         precision: 1
@@ -98,8 +115,7 @@ modbus:
         address: 4
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 0.1
         offset: 0
         precision: 1
@@ -109,8 +125,7 @@ modbus:
         address: 5
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 0.1
         offset: 0
         precision: 1
@@ -120,8 +135,7 @@ modbus:
         address: 6
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 0.1
         offset: 0
         precision: 1
@@ -131,8 +145,7 @@ modbus:
         address: 7
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 0.1
         offset: 0
         precision: 1
@@ -142,8 +155,7 @@ modbus:
         address: 8
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 1
         offset: 0
         precision: 0 
@@ -153,8 +165,7 @@ modbus:
         address: 9
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 1
         offset: 0
         precision: 0  
@@ -164,8 +175,7 @@ modbus:
         address: 10
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 1
         offset: 0
         precision: 0
@@ -175,8 +185,7 @@ modbus:
         address: 11
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 1
         offset: 0
         precision: 0 
@@ -186,8 +195,7 @@ modbus:
         address: 12
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 1
         offset: 0
         precision: 0  
@@ -197,8 +205,7 @@ modbus:
         address: 13
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 1
         offset: 0
         precision: 0
@@ -208,8 +215,7 @@ modbus:
         address: 14
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 1
         offset: 0
         precision: 0 
@@ -219,8 +225,7 @@ modbus:
         address: 30
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 1
         offset: 0
         precision: 0
@@ -230,8 +235,7 @@ modbus:
         address: 31
         count: 1
         input_type: input
-        data_type: custom
-        structure: ">H"
+        data_type: int
         scale: 1
         offset: 0
         precision: 0

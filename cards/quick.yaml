@@ -4,17 +4,17 @@ cards:
     cards:
       - type: entity
         entity: sensor.indoor_air
-        name: Vnitřní
+        name: Indoor
       - type: entity
         entity: sensor.outside_air
-        name: Venkovní
+        name: Ourdoor
   - type: horizontal-stack
     cards:
       - type: gauge
         entity: sensor.humidity_inside_out
         min: 0
         max: 100
-        name: Vlhkost
+        name: Humidity
         severity:
           green: 40
           yellow: 60
@@ -23,7 +23,7 @@ cards:
         entity: sensor.fresh_air_fan_perc
         min: 0
         max: 100
-        name: Ventilace
+        name: Air Vent
         severity:
           green: 30
           yellow: 60
